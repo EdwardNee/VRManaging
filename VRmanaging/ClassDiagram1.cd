@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ButtonClicks">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAEAAAAAAAgAAAAAAgQAgAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\ButtonClicks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetServer">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="NetServer.VideosDeliveredDel" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\NetServer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAYAEAAAACAgAAAhAAAAADAABCUAAAAAQAAABQAAAFA=</HashCode>
+      <FileName>Assets\Scripts\NetServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameView">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NetServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tracking" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAIAAACAIAAAAAAEAAAAIAAAAUAAAAAIECAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Tracking.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MainTools">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAQIAAAAAAQAAAAAAAAAAgAQAAAAAAgCA=</HashCode>
+      <FileName>Assets\Scripts\MainTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataConnection">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAkAAAAQAAAAEAAABAAAAAAgAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\DataConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConnectionState">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAQAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ConnectionState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AvailableVideosScript">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAwAAACAgQAAAAAIAAAAAAAAAQAAAQAAACABABAA=</HashCode>
+      <FileName>Assets\Scripts\AvailableVideosScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

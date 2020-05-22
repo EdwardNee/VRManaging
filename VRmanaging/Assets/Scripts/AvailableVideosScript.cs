@@ -1,21 +1,30 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Настройки показа видео.
+/// </summary>
 public class AvailableVideosScript : MonoBehaviour
 {
-    public static AvailableVideosScript Instance { get; private set; }
-    private NetServer netServer;
-    private static string[] videos;
-    public GameObject availableVideosPref;
-    public Transform parentPanel;
-    public Transform availVidPan;
+    public static AvailableVideosScript Instance { get; private set; }  //Дает инициализировать экземпляр.
+    private NetServer netServer;    //Инициализирует экземпляр.
+    private static string[] videos; //Пути к видео файлам.
+    //public GameObject availableVideosPref;
+    public Transform parentPanel;   //Родительская панель для видео.
+    public Transform availVidPan;   //Для видео.
     public Font font;
+
+    public Text showCurrVid;    //Название текущего видео.
+    public Button videoListBttn;    //Выводит список всех доступных видео.
+
+    private GameView gameView;  //Инициализирует экземпляр.
+
+    // Start is called before the first frame update
     void Start()
     {
+        gameView = new GameView();
         Instance = this;
         netServer = NetServer.Instance;
         netServer.videosDelivered = new NetServer.VideosDeliveredDel(VideosDelivered);
@@ -23,7 +32,6 @@ public class AvailableVideosScript : MonoBehaviour
         availVidPan.GetComponent<Animator>().SetTrigger("OnAv");    //Чтобы панель была невидимой.
 
     }
-
     /// <summary>
     /// Метод выводит на parentPanel доступные видео.
     /// </summary>
@@ -87,16 +95,15 @@ public class AvailableVideosScript : MonoBehaviour
     /// Срабатывает на нажатие newButton, которое отправляет
     /// путь к видео, которое нужно для показа.
     /// </summary>
-    void SendVideoName(string videoPath)
+    public void SendVideoName(string videoPath)
     {
-        foreach (var cl in netServer.connectedClients)
+        foreach (var cl in DataConnection.connectedClients)
         {
-            netServer.connectedClients[cl.Key].Send(Encoding.Unicode.GetBytes(videoPath));
+            DataConnection.connectedClients[cl.Key].Send(Encoding.Unicode.GetBytes(videoPath));
         }
         //netServer.client.Send(Encoding.Unicode.GetBytes(videoPath));
         videoListBttn.gameObject.SetActive(true);
-        availVidPan.GetComponent<Animator>().SetTrigger("OnAv");
-
+        //availVidPan.GetComponent<Animator>().SetTrigger("OnAv");
+        showCurrVid.text = videoPath.Substring(videoPath.LastIndexOf('/') + 1, videoPath.Length - videoPath.LastIndexOf('/') - 1);
     }
-    public Button videoListBttn;
 }

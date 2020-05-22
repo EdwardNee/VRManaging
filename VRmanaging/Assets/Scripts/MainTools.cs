@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Переключение между панелями: плеер и настройки.
+/// </summary>
 public class MainTools : MonoBehaviour
 {
-    public static MainTools Instance { get; private set; }
-    private AvailableVideosScript avs;
-    public Sprite[] currentWindow;
-    public Button[] windowBttns;
+    private AvailableVideosScript avs { get; set; }
+    public Sprite[] currentWindow;  //Спрайты кнопок.
+    public Button[] windowBttns;    //Кнопки переключения панелей.
 
-    public Transform optionPanel;
-    public Transform playerPanel;
+    public Transform optionPanel;   //Панель настроек.
+    public Transform playerPanel;   //Панель с плеером.
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,9 @@ public class MainTools : MonoBehaviour
         windowBttns[0].GetComponent<Image>().sprite = currentWindow[1];
     }
 
+    /// <summary>
+    /// Реагирует при нажатии на кнопку OptionBttn.
+    /// </summary>
     public void SwitchToOption()
     {
         optionPanel.GetComponent<Animator>().SetTrigger("OnOp");
@@ -30,6 +33,9 @@ public class MainTools : MonoBehaviour
         windowBttns[1].GetComponent<Image>().sprite = currentWindow[2];
     }
 
+    /// <summary>
+    /// Реагирует при нажатии на кнопку PlayerBttn.
+    /// </summary>
     public void SwitchToPlayer()
     {
         playerPanel.GetComponent<Animator>().SetTrigger("OnPp");
